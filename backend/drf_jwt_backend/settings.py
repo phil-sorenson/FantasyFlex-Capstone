@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'authentication.apps.AuthenticationConfig',
     'corsheaders',
+    'sleeper',
+    'espn',
+    'yahoo',
 ]
 
 MIDDLEWARE = [
