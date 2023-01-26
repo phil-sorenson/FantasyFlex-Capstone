@@ -40,9 +40,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'authentication.apps.AuthenticationConfig',
     'corsheaders',
-    'sleeper',
-    'espn',
-    'yahoo',
+    'league_users',
+    'leagues',
+    'matchups',
+    'players',
+    'rosters',
 ]
 
 MIDDLEWARE = [
