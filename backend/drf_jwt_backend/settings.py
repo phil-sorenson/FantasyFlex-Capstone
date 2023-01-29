@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'matchups',
     'players',
     'rosters',
+    'fantasy_platforms',
 ]
 
 MIDDLEWARE = [
