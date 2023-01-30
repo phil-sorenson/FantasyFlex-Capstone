@@ -5,4 +5,4 @@ from .models import Platform
 class PlatformSerializer(serializers.ModelSerializer):
     class Meta:
         model = Platform
-        fields = ['name', 'api_url']
+        fields = ['id', 'name']

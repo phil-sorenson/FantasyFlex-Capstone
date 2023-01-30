@@ -1,6 +1,19 @@
 from django.db import models
 
-# Create your models here.
+
+# platform_id
 class Platform(models.Model):
-    name = models.CharField(max_length=255)
-    api_url = models.CharField(max_length=255)
+    SLEEPER = 'Sleeper'
+    YAHOO = 'Yahoo'
+    PLATFORM_CHOICES = [
+        (SLEEPER, 'Sleeper'),
+        (YAHOO, 'Yahoo'),
+    ]
+    name = models.CharField(
+        max_length=100,
+        choices = PLATFORM_CHOICES,
+        default= SLEEPER
+    )
+
+    def __str__(self):
+        return self.name
