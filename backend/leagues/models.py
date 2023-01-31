@@ -9,7 +9,7 @@ class League(models.Model):
     league_name = models.CharField(max_length=255)
     league_id = models.IntegerField(max_length=255, unique=True)
     # is_imported tracks whether league was imported to user's account or not
-    is_imported = models.BooleanField(default=False)
+   
 
     def __str__(self):
         return self.league_name
