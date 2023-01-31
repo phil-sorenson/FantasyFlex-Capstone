@@ -17,3 +17,10 @@ Starter code for full stack React + Django applications using JWT for authentica
   - note that this article is from 2018 and dealing with a full stack Django application scenario with HTML/CSS templates. The principles of setting up the backend portion for User roles is still valid!
 - once user roles are set up on your backend, you can now utilize them on the frontend. Recommend reviewing the React Router slideshow for ideas on how to use descendant routes and conditional rendering to control who can access what parts of your application based on a role!
 
+# = <h1> (# for every h)
+
+**ToDo**
+1. Go into backend and created a url path for platform login view function
+2. Migrate anything done
+3. Figure out best practices for creating components when stacking similar/same functionalities through 3 different sources (Create a Folder for each platform and create the same components in each or create a folder for the functionality)
+4. Figure out what packags to install or use
