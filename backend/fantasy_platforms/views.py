@@ -9,13 +9,13 @@ from django.shortcuts import get_object_or_404
 
 
 
-@api_view(['GET'])
-@permission_classes([IsAuthenticated])
-def get_platforms(request):
-# Code to retrieve a list of avb platforms
-    platforms = Platform.objects.all()
-    serializer = PlatformSerializer(platforms, many=True)
-    return Response(serializer.data, status = status.HTTP_200_OK)
+# @api_view(['GET'])
+# @permission_classes([IsAuthenticated])
+# def get_platforms(request):
+# # Code to retrieve a list of avb platforms
+#     platforms = Platform.objects.all()
+#     serializer = PlatformSerializer(platforms, many=True)
+#     return Response(serializer.data, status = status.HTTP_200_OK)
 
 
 @api_view(['POST'])

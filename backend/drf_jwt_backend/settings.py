@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'players',
     'rosters',
     'fantasy_platforms',
+    
 ]
 
 MIDDLEWARE = [

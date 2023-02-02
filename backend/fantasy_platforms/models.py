@@ -1,19 +1,18 @@
 from django.db import models
+from authentication.models import AbstractUser
 
 
-# platform_id
+
+class User(AbstractUser):
+    email = models.EmailField(unique= True)
+    password = models.CharField(max_length = 100)
+
 class Platform(models.Model):
-    SLEEPER = 'Sleeper'
-    YAHOO = 'Yahoo'
-    PLATFORM_CHOICES = [
-        (SLEEPER, 'Sleeper'),
-        (YAHOO, 'Yahoo'),
-    ]
-    name = models.CharField(
-        max_length=100,
-        choices = PLATFORM_CHOICES,
-        default= SLEEPER
-    )
-
+    name = models.CharField(max_length = 150)    
+class PlatformToken(models.Model):
+    user = models.ForeignKey(User, on_delete= models.CASCADE)
+    platform = models.CharField(max_length=100)
+    token = models.CharField(max_length=100)
+    
     def __str__(self):
         return self.name
