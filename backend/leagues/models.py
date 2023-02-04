@@ -7,9 +7,7 @@ class League(models.Model):
     league_name = models.CharField(max_length=255)
     league_id = models.CharField(max_length=255, unique=True)
     year = models.CharField(max_length=10)
-    roster = models.CharField(max_length = 100)
-    teams = models.CharField(max_length= 100)
-    transactions
+    
     
 
 
