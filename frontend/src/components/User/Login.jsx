@@ -11,23 +11,23 @@ import LoginForm from './LoginForm';
 
 const Login = ({ onLogin }) => {
     
-    const [selectedPlatform, setSelectedPlatform] = useState(null)
+ 
     const [userID, setUserID] = useState(null)
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
     const platforms = [
-        {id: 1, name: `Sleeper`, endpoint: `https://sleeper.app/login`}
+        {id: 1, name: `Sleeper`, endpoint: `https://api.sleeper.app/v1/user/${username}`}
     ];
 
     function handlePlatformSelection(platform) {
         setSelectedPlatform(platform);
     }
 
-    async function handleLogin(email,password){
+    async function handleLogin(username,password){
        setIsLoading(true);
         await axios.post(`${selectedPlatform.endpoint}`, {
-            email, 
+            username, 
             password,
         })
         

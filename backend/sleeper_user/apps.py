@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class LeagueUsersConfig(AppConfig):
+class SleeperUserConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'league_users'
+    name = 'sleeper_user'

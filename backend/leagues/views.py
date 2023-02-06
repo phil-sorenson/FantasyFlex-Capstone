@@ -1,7 +1,7 @@
-# from django.shortcuts import render
-from .models import League
-from .serializers import LeagueSerializer
-from rest_framework import viewsets
+# # from django.shortcuts import render
+# from .models import League
+# from .serializers import LeagueSerializer
+# from rest_framework import viewsets
 # from rest_framework.decorators import api_view, permission_classes
 # from rest_framework.response import Response
 # from rest_framework import status
@@ -24,6 +24,6 @@ from rest_framework import viewsets
 # # Import the user's selected leagues to Fantasy Flex application (GET league w/ league_id) --  
 #     selected_leagues = request.data.get
 
-class LeagueViewSet(viewsets.ModelViewSet):
-    queryset = League.objects.all()
-    serializer_class = LeagueSerializer
+# class LeagueViewSet(viewsets.ModelViewSet):
+#     queryset = League.objects.all()
+#     serializer_class = LeagueSerializer
