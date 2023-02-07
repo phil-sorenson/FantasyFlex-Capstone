@@ -24,7 +24,7 @@ const LoginForm = ({ signal }) => {
     async function handleSubmit(e) {
         e.preventDefault();
         try {
-            const authResponse = await signal(userInput); 
+            const response = await signal(userInput); 
             setUserInput(initialFormState)
             
         } catch (error) {

@@ -129,5 +129,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# Yahoo API Key & APP ID
+# API Keys & Tokens
 localKey.js
+tokens.js
