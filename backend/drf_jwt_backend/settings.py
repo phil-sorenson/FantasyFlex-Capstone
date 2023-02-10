@@ -38,16 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
     'rest_framework',
     'authentication.apps.AuthenticationConfig',
     'corsheaders',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'leagues',
     'fantasy_platforms',
     'sleeper_user',
-    
+
 ]
 
 MIDDLEWARE = [

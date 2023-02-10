@@ -1,5 +1,6 @@
 {
     "editor.cursorBlinking": "phase",
     "editor.fontFamily": "Consolas, 'Courier New', monospace",
-    "editor.tabSize": 3
+    "editor.tabSize": 3,
+    "editor.formatOnSave": true
 }
