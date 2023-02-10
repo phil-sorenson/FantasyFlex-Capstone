@@ -10,7 +10,6 @@ const HomePage = () => {
 
   const [user, token] = useAuth();
   const [] = useState([]);
-
   // useEffect(() => {
   //   const fetchCars = async () => {
   //     try {
@@ -26,11 +25,7 @@ const HomePage = () => {
   //   };
   //   fetchCars();
   // }, [token]);
-  return (
-    <div>
-
-    </div>
-  );
+  return <div></div>;
 };
 
 export default HomePage;

@@ -17,6 +17,7 @@ import Footer from "./components/Footer/Footer";
 import PrivateRoute from "./utils/PrivateRoute";
 import { useState } from "react";
 import useAuth from "./hooks/useAuth";
+import LoginForm from "./components/PlatformLogin/LoginForm";
 
 const BASE_URL = `https://api.sleeper.app/v1/`;
 const DB_URL = `http://127.0.0.1:8000/api/auth/`
@@ -65,6 +66,7 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route path="/platform_login" element={<LoginForm />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
