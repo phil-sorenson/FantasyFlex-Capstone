@@ -41,11 +41,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'authentication.apps.AuthenticationConfig',
     'corsheaders',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'leagues',
-    'fantasy_platforms',
+    # 'allauth',
+    # 'allauth.account',
+    # 'allauth.socialaccount',
     'sleeper_user',
 
 ]

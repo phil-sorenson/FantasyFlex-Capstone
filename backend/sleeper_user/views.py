@@ -15,34 +15,30 @@ from .models import SleeperUser
 
 
 # GET request 'login' that extracts the 'user_id' upon a 200 status code
+# Takes in the Sleeper API endpoint (user info via username)-- returns as JSON and saves data if valid
 @permission_classes([IsAuthenticated])
-@api_view(['GET'])
+@api_view(['GET', 'POST'])
 def login(request, username):
-    response = requests.get(f'https://api.sleeper.app/v1/user/{username}')
-    data = response.json()
-    serializer = SleeperUserSerializer(data=request.data)
-    if serializer.is_valid():
-        serializer.save()
-        print(serializer.data)
-        # user_id = serializer.validated_data['user_id']
-        # avatar = serializer.validated_data['avatar']
-        # display_name = serializer.validated_data['display_name']
-        return Response(serializer.data, status=status.HTTP_200_OK)
-    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    if request.method == 'GET':
+        response = requests.get(f'https://api.sleeper.app/v1/user/{username}')
+        user_data = response.json()
+        try:
+            user = SleeperUser.objects.get(username=username)
+            serializer = SleeperUserSerializer(
+                user, data=user_data, partial=True)
+            if serializer.is_valid():
+                serializer.save()
+                print(serializer.data)
+        except SleeperUser.DoesNotExist:
+            serializer = SleeperUserSerializer(data=user_data)
+            if serializer.is_valid():
+                serializer.save()
+            return Response(serializer.data)
+    elif request.method == 'POST':
+        serializer = SleeperUserSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
-@permission_classes([IsAuthenticated])
-@api_view(['POST'])
-def logged_user(request, username):
-    if request.method == 'POST':
-        # user_id = request.data.get('user_id')
-        # avatar = request.data.get('avatar')
-        # display_name = request.data.get('display_name')
-        user = SleeperUser.objects.create(username=username)
-        serializer = SleeperUserSerializer(user)
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
-
-# class SleeperUserCreate(generics.CreateAPIView):
-#     permission_classes = [IsAuthenticated]
-#     queryset = SleeperUser.objects.all()
-#     serializer_class = SleeperUserSerializer
+# Todo: Create a delete leagues function

@@ -5,13 +5,12 @@ import Login from './Login';
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 
-const LoginForm = ({ signal }) => {
+const LoginForm = () => {
 
     const navigate = useNavigate();
     
     const initialFormState = {
         username: '',
-        password: '',
     }
 
     const [userInput, setUserInput] = useState(initialFormState);
@@ -45,7 +44,7 @@ const LoginForm = ({ signal }) => {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            {/* <div>
                 <label htmlFor='password'>Password</label>
                 <input
                     type='password'
@@ -54,7 +53,7 @@ const LoginForm = ({ signal }) => {
                     value={userInput.password}
                     onChange={handleChange}
                 />
-            </div>
+            </div> */}
             <button type='button'>Login</button>
         </form>
        

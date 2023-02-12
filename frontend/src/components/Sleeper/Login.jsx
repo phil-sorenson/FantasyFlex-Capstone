@@ -28,7 +28,7 @@ const Login = ({ onLogin }) => {
        setIsLoading(true);
         await axios.post(`${selectedPlatform.endpoint}`, {
             username, 
-            password,
+            
         })
         
         .then((response) =>{

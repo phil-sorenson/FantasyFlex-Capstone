@@ -1,6 +1,36 @@
 {
-    "editor.cursorBlinking": "phase",
+    "editor.cursorBlinking": "expand",
     "editor.fontFamily": "Consolas, 'Courier New', monospace",
     "editor.tabSize": 3,
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "launch": {
+        "configurations": [],
+        "compounds": []
+    },
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 33060,
+            "driver": "MySQL",
+            "name": "central_connection",
+            "database": "fantasy_flex_database",
+            "username": "PhilS"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "127.0.0.1",
+            "port": 33060,
+            "driver": "MySQL",
+            "name": "school_db",
+            "database": "fantasy_flex_database",
+            "username": "root"
+        }
+    ]
 }
